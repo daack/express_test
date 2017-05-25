@@ -3,3 +3,8 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}, Bitch!
+
+  form(action="/auth" method="POST")
+    input(type="text" placeholder="Utente..." name="user")
+    input(type="password" name="password")
+    button(type="submit") Login
