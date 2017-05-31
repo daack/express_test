@@ -17,3 +17,10 @@ body > .grid {
 a {
   color: #00B7FF;
 }
+
+/* LOGIN */
+.ui.form .error.message,
+.ui.form .success.message,
+.ui.form .warning.message {
+	display: block !important;
+}
