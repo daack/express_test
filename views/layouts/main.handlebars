@@ -1,0 +1,43 @@
+<!-- views/layouts/main.handlebars -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="User Authentication">
+		<meta name="author" content="">
+
+		<title>User Authentication</title>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="/stylesheets/style.css">
+		<link rel="stylesheet" href="/semantic/dist/semantic.min.css">
+	</head>
+
+	<body>
+
+		{{#if error}}
+			{{error}}
+		{{/if}}
+
+		{{#if success}}
+			{{success}}
+		{{/if}}
+
+		{{#if notice}}
+			{{notice}}
+		{{/if}}
+
+		<!--where our other templates will insert-->
+		{{{body}}}
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="/semantic/dist/semantic.min.js"></script>
+	</body>
+</html>
