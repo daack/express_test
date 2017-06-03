@@ -1,3 +1,17 @@
+{{#if logged}}
+<div class="ui middle aligned center aligned grid">
+	<div class="column">
+		<h2 class="ui teal image header">
+			<div class="content">
+				Benvenuto, {{logged}}
+			</div>
+		</h2>
+		{{#if success}}
+			<div class="ui success message">{{success}}</div>
+		{{/if}}
+	</div>
+</div>
+{{else}}
 <div class="ui middle aligned center aligned grid">
 	<div class="column">
 		<h2 class="ui teal image header">
@@ -29,3 +43,4 @@
 		</form>
 	</div>
 </div>
+{{/if}}
