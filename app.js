@@ -49,7 +49,7 @@ app.use(function(req, res, next){
 	if (err) res.locals.error = err;
 	if (msg) res.locals.notice = msg;
 	if (win) res.locals.success = win;
-	if (log) res.locals.logged = logged;
+	if (log) res.locals.logged = log;
 
 	next();
 });
