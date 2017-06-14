@@ -15,7 +15,8 @@
 			</div>
 		</div>
 	{% else %}
-		<div class="ui middle aligned center aligned grid">
+		<div id="root"></div>
+		<div class="ui middle aligned center aligned grid" style="display:none;">
 			<div class="column">
 				<h2 class="ui teal image header">
 					<div class="content">
@@ -46,5 +47,17 @@
 				</form>
 			</div>
 		</div>
+
+		<script src="http://cdn.auth0.com/js/lock/10.16.0/lock.min.js"></script>
+		<script>
+			var lock = new Auth0Lock('{{env.AUTH0_CLIENT_ID}}', '{{env.AUTH0_DOMAIN}}', { auth: {
+				redirectUrl: '{{env.AUTH0_CALLBACK_URL}}'
+				, responseType: 'code'
+				, params: {
+				scope: 'openid profile'
+				}
+			}});
+			lock.show();
+		</script>
 	{% endif %}
 {% endblock %}

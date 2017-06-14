@@ -8,6 +8,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var nunjucks = require('nunjucks');
+var passport = require('passport');
+var Auth0Strategy = require('passport-auth0');
 
 var index = require('./routes/index');
 var auth = require('./routes/auth');
@@ -15,6 +17,29 @@ var auth = require('./routes/auth');
 // ROUTES CIBO
 var cibo = require('./routes/cibo');
 var users = require('./routes/users');
+
+// This will configure Passport to use Auth0
+var strategy = new Auth0Strategy({
+	domain:       process.env.AUTH0_DOMAIN,
+	clientID:     process.env.AUTH0_CLIENT_ID,
+	clientSecret: process.env.AUTH0_CLIENT_SECRET,
+	callbackURL:  'http://localhost:3000/callback'
+}, function(accessToken, refreshToken, extraParams, profile, done) {
+	// profile has all the information from the user
+	return done(null, profile);
+});
+
+// Here we are adding the Auth0 Strategy to our passport framework
+passport.use(strategy);
+
+// The searlize and deserialize user methods will allow us to get the user data once they are logged in.
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
 
 var app = express();
 
@@ -35,6 +60,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret: 'supercat', saveUninitialized: true, resave: true}));
+
+// We are also adding passport to our middleware flow
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Session-persisted message middleware
 app.use(function(req, res, next){
