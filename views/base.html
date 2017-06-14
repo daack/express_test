@@ -8,17 +8,17 @@
 		<meta name="description" content="User Authentication">
 		<meta name="author" content="">
 
-		<title>{{title}}</title>
+		<title>{{ title }}</title>
 
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="/stylesheets/style.css">
 		<link rel="stylesheet" href="/semantic/dist/semantic.min.css">
 	</head>
 
-	<body>
+	<body>		
 
 		<!--where our other templates will insert-->
-		{{#if logged}}
+		{% if logged %}
 			<div class="ui fixed inverted menu">
 				<div class="ui container">
 					<a href="/" class="header item">
@@ -69,9 +69,9 @@
 					</div>
 				</div>
 			</div>
-		{{/if}}
+		{% endif %}
 
-		{{{body}}}
+		{% block contents %}{% endblock %}
 
 		<!-- Bootstrap core JavaScript
 		================================================== -->
