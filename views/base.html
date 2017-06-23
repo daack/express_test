@@ -18,58 +18,56 @@
 	<body>		
 
 		<!--where our other templates will insert-->
-		{% if logged %}
-			<div class="ui fixed inverted menu">
-				<div class="ui container">
-					<a href="/" class="header item">
-						House App
-					</a>
-					<div class="ui simple dropdown item">
-						Cibo <i class="dropdown icon"></i>
-						<div class="menu">
-							<a class="item" href="cibo/spesa">Lista della spesa</a>
-							<a class="item" href="cibo/ricette">Ricette</a>
-							<div class="divider"></div>
-							<a class="item" href="cibo/mangiare">Che si mangia?</a>
-						</div>
+		<div class="ui fixed inverted menu">
+			<div class="ui container">
+				<a href="/" class="header item">
+					House App
+				</a>
+				<div class="ui simple dropdown item">
+					Cibo <i class="dropdown icon"></i>
+					<div class="menu">
+						<a class="item" href="cibo/spesa">Lista della spesa</a>
+						<a class="item" href="cibo/ricette">Ricette</a>
+						<div class="divider"></div>
+						<a class="item" href="cibo/mangiare">Che si mangia?</a>
 					</div>
+				</div>
 
-					<div class="ui simple dropdown item">
-						Utenze <i class="dropdown icon"></i>
-						<div class="menu">
-							<a class="item" href="utenze/gas">Engi - Gas</a>
-							<a class="item" href="utenze/energia">Enel - Energia</a>
-							<a class="item" href="utenze/acqua">Acque Veronesi - Acqua</a>
-							<a class="item" href="utenze/internet">Tim - Adsl / Telefono</a>
-						</div>
+				<div class="ui simple dropdown item">
+					Utenze <i class="dropdown icon"></i>
+					<div class="menu">
+						<a class="item" href="utenze/gas">Engi - Gas</a>
+						<a class="item" href="utenze/energia">Enel - Energia</a>
+						<a class="item" href="utenze/acqua">Acque Veronesi - Acqua</a>
+						<a class="item" href="utenze/internet">Tim - Adsl / Telefono</a>
 					</div>
+				</div>
 
-					<div class="ui simple dropdown item">
-						Persone <i class="dropdown icon"></i>
-						<div class="menu">
-							<a class="item" href="users/michele">Michele</a>
-							<a class="item" href="users/alessia">Alessia</a>
-						</div>
+				<div class="ui simple dropdown item">
+					Persone <i class="dropdown icon"></i>
+					<div class="menu">
+						<a class="item" href="users/michele">Michele</a>
+						<a class="item" href="users/alessia">Alessia</a>
 					</div>
+				</div>
 
-					<div class="ui simple dropdown item">
-						Auto <i class="dropdown icon"></i>
-						<div class="menu">
-							<a class="item" href="auto/michele">Michele - Fiat Punto</a>
-							<a class="item" href="auto/alessia">Alessia - Renault Clio</a>
-						</div>
+				<div class="ui simple dropdown item">
+					Auto <i class="dropdown icon"></i>
+					<div class="menu">
+						<a class="item" href="auto/michele">Michele - Fiat Punto</a>
+						<a class="item" href="auto/alessia">Alessia - Renault Clio</a>
 					</div>
+				</div>
 
-					<div class="ui simple dropdown item">
-						Attivit&agrave; <i class="dropdown icon"></i>
-						<div class="menu">
-							<a class="item" href="activity/tv">Tv</a>
-							<a class="item" href="activity/casa">Casa</a>
-						</div>
+				<div class="ui simple dropdown item">
+					Attivit&agrave; <i class="dropdown icon"></i>
+					<div class="menu">
+						<a class="item" href="activity/tv">Tv</a>
+						<a class="item" href="activity/casa">Casa</a>
 					</div>
 				</div>
 			</div>
-		{% endif %}
+		</div>
 
 		{% block contents %}{% endblock %}
 
@@ -79,6 +77,8 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 		<!-- Latest compiled and minified JavaScript -->
-		<script src="/semantic/dist/semantic.min.js"></script>		
+		<script src="/semantic/dist/semantic.min.js"></script>
+
+		{% block bottom_scripts %}{% endblock %}
 	</body>
 </html>
