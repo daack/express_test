@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 router.get('/callback',
 	passport.authenticate('auth0', { failureRedirect: '/' }),
 	function(req, res) {
-		res.redirect(req.session.returnTo || '/users');
+		res.redirect(req.session.returnTo || '/dashboard');
 	}
 );
 

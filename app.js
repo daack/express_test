@@ -11,8 +11,9 @@ var nunjucks = require('nunjucks');
 var passport = require('passport');
 var Auth0Strategy = require('passport-auth0');
 
+//GENERIC ROUTES
 var index = require('./routes/index');
-var auth = require('./routes/auth');
+var dashboard = require('./routes/dashboard');
 
 // ROUTES CIBO
 var cibo = require('./routes/cibo');
@@ -86,7 +87,7 @@ app.use(function(req, res, next){
 });
 
 app.use('/', index);
-app.use('/auth', auth);
+app.use('/dashboard', dashboard);
 app.use('/cibo', cibo);
 app.use('/users', users);
 
