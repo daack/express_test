@@ -2,7 +2,7 @@
   "name": "house-app",
   "description": "A Vue.js project",
   "version": "1.0.0",
-  "author": "Casa Michele <miralo.web@gmail.com>",
+  "author": "Michele",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
