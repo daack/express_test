@@ -50,13 +50,22 @@
 
 		<script src="https://cdn.auth0.com/js/lock/10.16.0/lock.min.js"></script>
 		<script>
-			var lock = new Auth0Lock('{{env.AUTH0_CLIENT_ID}}', '{{env.AUTH0_DOMAIN}}', { auth: {
-				redirectUrl: '{{env.AUTH0_CALLBACK_URL}}'
-				, responseType: 'code'
-				, params: {
-				scope: 'openid profile'
+			var lock = new Auth0Lock('{{env.AUTH0_CLIENT_ID}}', '{{env.AUTH0_DOMAIN}}', { 
+				auth: {
+					redirectUrl: '{{env.AUTH0_CALLBACK_URL}}',
+					responseType: 'code',
+					params: {
+						scope: 'openid profile'
+					}
+				}, 
+				allowSignUp: false,
+				allowedConnections: ['facebook'], 
+				closable: false,
+				language: 'it',
+				theme: {
+					primaryColor: '#31324F'
 				}
-			}});
+			});
 			lock.show();
 		</script>
 	{% endif %}
