@@ -23,7 +23,6 @@
     "passport": "^0.3.2",
     "passport-auth0": "^0.6.0",
     "pug": "^2.0.0-rc.1",
-    "semantic-ui": "^2.2.10",
     "serve-favicon": "~2.4.2"
   }
 }
