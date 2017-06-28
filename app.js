@@ -58,6 +58,9 @@ passport.deserializeUser(function(user, done) {
 app.use(passport.initialize());
 app.use(passport.session());
 
+// index
+app.use('/', require('./routes/index'));
+
 app.use(function(req, res, next) {
 	if (!req.user)
 		return res.redirect('/');
@@ -66,14 +69,12 @@ app.use(function(req, res, next) {
 });
 
 //GENERIC ROUTES
-var index = require('./routes/index');
 var dashboard = require('./routes/dashboard');
 
 // ROUTES CIBO
 var cibo = require('./routes/cibo');
 var users = require('./routes/users');
 
-app.use('/', index);
 app.use('/dashboard', dashboard);
 app.use('/cibo', cibo);
 app.use('/users', users);
