@@ -39,7 +39,7 @@ var strategy = new Auth0Strategy({
 	callbackURL:  process.env.AUTH0_LOGIN_CALLBACK
 }, function(accessToken, refreshToken, extraParams, user, done) {
 	// profile has all the information from the user
-	return done(null, user);
+	return done(null, user._json);
 });
 
 // Here we are adding the Auth0 Strategy to our passport framework
