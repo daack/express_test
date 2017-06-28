@@ -58,6 +58,13 @@ passport.deserializeUser(function(user, done) {
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(function(req, res, next) {
+	if (!req.user)
+		return res.redirect('/');
+
+	next();
+});
+
 //GENERIC ROUTES
 var index = require('./routes/index');
 var dashboard = require('./routes/dashboard');
